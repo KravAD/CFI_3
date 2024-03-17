@@ -15,4 +15,10 @@ public class Animal extends Organismo{
     public void setTipo(String tipo) {
         this.tipo = tipo;
     }
+    public void depredar(Organismo presa) {
+        if (this.salud > presa.getSalud()) {
+            this.salud += presa.getSalud();
+            presa.setSalud(0);
+        }
+    }
 }
