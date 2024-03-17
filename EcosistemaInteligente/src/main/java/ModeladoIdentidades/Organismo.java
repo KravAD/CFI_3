@@ -1,13 +1,13 @@
 package ModeladoIdentidades;
 
-public class organismo {
+public class Organismo {
     protected int posicionX;
     protected int posicionY;
     protected int salud;
     protected int edad;
     protected boolean estadoReproductivo;
 
-    public organismo(int posicionX, int posicionY, int salud, int edad, boolean estadoReproductivo) {
+    public Organismo(int posicionX, int posicionY, int salud, int edad, boolean estadoReproductivo) {
         this.posicionX = posicionX;
         this.posicionY = posicionY;
         this.salud = salud;
@@ -53,5 +53,7 @@ public class organismo {
 
     public void setEstadoReproductivo(boolean estadoReproductivo) {
         this.estadoReproductivo = estadoReproductivo;
+    }
+    public void interactuar(Organismo organismo){
     }
 }

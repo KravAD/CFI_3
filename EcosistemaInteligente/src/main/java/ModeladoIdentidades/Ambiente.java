@@ -1,4 +1,4 @@
 package ModeladoIdentidades;
 
-public class ambiente {
+public class Ambiente {
 }
