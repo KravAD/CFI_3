@@ -21,4 +21,10 @@ public class Animal extends Organismo{
             presa.setSalud(0);
         }
     }
+    public void competirPorRecursos(Organismo rival, Ambiente ambiente) {
+        if (this.salud > rival.getSalud() && ambiente.getRecursosDisponibles() > 0) {
+            this.salud += 10;
+            ambiente.setRecursosDisponibles(ambiente.getRecursosDisponibles() - 10);
+        }
+    }
 }
