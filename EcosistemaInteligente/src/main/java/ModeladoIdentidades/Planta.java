@@ -21,5 +21,11 @@ public class Planta extends Organismo{
             otraPlanta.setSalud(otraPlanta.getSalud() + 10);
         }
     }
+    @Override
+    public void interactuar(Organismo organismo) {
+        if (organismo instanceof Planta) {
+            polinizar((Planta) organismo);
+        }
+    }
 
 }
