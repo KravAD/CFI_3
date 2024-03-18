@@ -8,4 +8,13 @@ public class Simulador {
         this.organismos = organismos;
         this.ambiente = ambiente;
     }
+    public void simular() {
+        }
+
+    public void calcularEstadisticas() {
+
+    }
+
+    public void presentarEstadisticas() {
+    }
 }
