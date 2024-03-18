@@ -66,12 +66,6 @@ public class Ambiente {
             }
         }
     }
-    public void calcularEstadísticas(Organismo[] organismos) {
-        int saludTotal = 0;
-        for (Organismo organismo : organismos) {
-            saludTotal += organismo.getSalud();
-        }
-        System.out.println("Salud media del ecosistema: " + saludTotal / organismos.length);
-    }
+
 
 }

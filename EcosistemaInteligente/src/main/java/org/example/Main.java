@@ -15,7 +15,7 @@ public class Main {
         Cebra cebra = new Cebra(2,2,100,5,true,"mamifero");
         Baobab baobab = new Baobab(2,2,100,15,true,"arbol");
         Hierba hierba = new Hierba(2,2,100,1,true,"gaminea");
-        
+
 
     }
 }
