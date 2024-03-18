@@ -1,6 +1,6 @@
 package ModeladoIdentidades;
 
-public class Organismo {
+public abstract class Organismo {
     protected int posicionX;
     protected int posicionY;
     protected int salud;
@@ -61,4 +61,5 @@ public class Organismo {
         this.salud++;
     }
 
+    public abstract Organismo reproducir();
 }

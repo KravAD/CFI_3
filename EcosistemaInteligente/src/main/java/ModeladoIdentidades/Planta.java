@@ -27,5 +27,13 @@ public class Planta extends Organismo{
             polinizar((Planta) organismo);
         }
     }
+    @Override
+    public Organismo reproducir() {
+        if (this.estadoReproductivo) {
+            Planta semilla = new Planta(1,1,50,0,true,"arbol");
+            return semilla;
+        }
+        return null;
+    }
 
 }

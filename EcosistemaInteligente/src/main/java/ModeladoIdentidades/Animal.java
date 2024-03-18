@@ -27,4 +27,13 @@ public class Animal extends Organismo{
             ambiente.setRecursosDisponibles(ambiente.getRecursosDisponibles() - 10);
         }
     }
+
+    @Override
+    public Organismo reproducir() {
+        if (this.estadoReproductivo) {
+            Animal cria = new Animal(1,1,50,0,true,"mamifero");
+            return cria;
+        }
+        return null;
+    }
 }
