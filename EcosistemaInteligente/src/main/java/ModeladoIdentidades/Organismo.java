@@ -56,5 +56,9 @@ public class Organismo {
     }
     public void interactuar(Organismo organismo){
     }
+    public void crecer(){
+        this.edad++;
+        this.salud++;
+    }
 
 }
