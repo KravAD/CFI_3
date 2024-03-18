@@ -16,22 +16,22 @@ public class Baobab extends Organismo{
     public void setTipo(String tipo) {
         this.tipo = tipo;
     }
-    public void polinizar(Planta otraPlanta) {
-        if (this.estadoReproductivo && otraPlanta.isEstadoReproductivo()) {
+    public void polinizar(Baobab otroBaobab) {
+        if (this.estadoReproductivo && otroBaobab.isEstadoReproductivo()) {
             this.salud += 10;
-            otraPlanta.setSalud(otraPlanta.getSalud() + 10);
+            otroBaobab.setSalud(otroBaobab.getSalud() + 10);
         }
     }
     @Override
     public void interactuar(Organismo organismo) {
-        if (organismo instanceof Planta) {
-            polinizar((Planta) organismo);
+        if (organismo instanceof Baobab) {
+            polinizar((Baobab) organismo);
         }
     }
     @Override
     public Organismo reproducir() {
         if (this.estadoReproductivo) {
-            Planta semilla = new Planta(1,1,50,0,true,"arbol");
+            Baobab semilla = new Baobab(1,1,50,0,true,"arbol");
             return semilla;
         }
         return null;

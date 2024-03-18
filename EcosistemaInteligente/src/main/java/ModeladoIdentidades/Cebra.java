@@ -1,9 +1,9 @@
 package ModeladoIdentidades;
 
-public class cebra extends Organismo{
+public class Cebra extends Organismo{
     protected String tipo;
 
-    public cebra(int posicionX, int posicionY, int salud, int edad, boolean estadoReproductivo, String tipo) {
+    public Cebra(int posicionX, int posicionY, int salud, int edad, boolean estadoReproductivo, String tipo) {
         super(posicionX, posicionY, salud, edad, estadoReproductivo);
         this.tipo = tipo;
     }
@@ -15,10 +15,10 @@ public class cebra extends Organismo{
     public void setTipo(String tipo) {
         this.tipo = tipo;
     }
-    public void depredar(Organismo presa) {
-        if (this.salud > presa.getSalud()) {
-            this.salud += presa.getSalud();
-            presa.setSalud(0);
+    public void comer(Organismo Hierba) {
+        if (this.salud > Hierba.getSalud()) {
+            this.salud += Hierba.getSalud();
+            Hierba.setSalud(0);
         }
     }
     public void competirPorRecursos(Organismo rival, Ambiente ambiente) {
@@ -31,7 +31,7 @@ public class cebra extends Organismo{
     @Override
     public Organismo reproducir() {
         if (this.estadoReproductivo) {
-            Animal cria = new Animal(1,1,50,0,true,"mamifero");
+            Cebra cria = new Cebra(1,1,50,0,true,"mamifero");
             return cria;
         }
         return null;

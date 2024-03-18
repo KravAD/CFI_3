@@ -15,22 +15,22 @@ public String getTipo() {
 public void setTipo(String tipo) {
     this.tipo = tipo;
 }
-public void polinizar(Planta otraPlanta) {
-    if (this.estadoReproductivo && otraPlanta.isEstadoReproductivo()) {
+public void polinizar(Hierba otraHierba) {
+    if (this.estadoReproductivo && otraHierba.isEstadoReproductivo()) {
         this.salud += 10;
-        otraPlanta.setSalud(otraPlanta.getSalud() + 10);
+        otraHierba.setSalud(otraHierba.getSalud() + 10);
     }
 }
 @Override
 public void interactuar(Organismo organismo) {
-    if (organismo instanceof Planta) {
-        polinizar((Planta) organismo);
+    if (organismo instanceof Hierba) {
+        polinizar((Hierba) organismo);
     }
 }
 @Override
 public Organismo reproducir() {
     if (this.estadoReproductivo) {
-        Planta semilla = new Planta(1,1,50,0,true,"arbol");
+        Hierba semilla = new Hierba(1,1,50,0,true,"gaminea");
         return semilla;
     }
     return null;
