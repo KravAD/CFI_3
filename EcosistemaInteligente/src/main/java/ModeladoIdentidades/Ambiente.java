@@ -34,4 +34,14 @@ public class Ambiente {
     public void setRecursosDisponibles(int recursosDisponibles) {
         this.recursosDisponibles = recursosDisponibles;
     }
+
+    public void simularInteracciones(Organismo[] organismos) {
+        for (int i = 0; i < organismos.length; i++) {
+            for (int j = i + 1; j < organismos.length; j++) {
+                organismos[i].interactuar(organismos[j]);
+                organismos[j].interactuar(organismos[i]);
+            }
+        }
+    }
+
 }
