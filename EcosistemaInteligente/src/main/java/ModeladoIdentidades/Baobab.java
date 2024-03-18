@@ -16,17 +16,25 @@ public class Baobab extends Organismo{
     public void setTipo(String tipo) {
         this.tipo = tipo;
     }
-    public void polinizar(Baobab otroBaobab) {
+
+    @Override
+    public void interactuar(Organismo organismo) {
+        if (organismo instanceof Cebra) {
+            proporcionarSombra((Cebra) organismo);
+        } else if (organismo instanceof Baobab) {
+            polenizar((Baobab) organismo);
+
+        }
+    }
+    public void polenizar(Baobab otroBaobab) {
         if (this.estadoReproductivo && otroBaobab.isEstadoReproductivo()) {
             this.salud += 10;
             otroBaobab.setSalud(otroBaobab.getSalud() + 10);
         }
     }
-    @Override
-    public void interactuar(Organismo organismo) {
-        if (organismo instanceof Baobab) {
-            polinizar((Baobab) organismo);
-        }
+
+    public void proporcionarSombra(Cebra cebra) {
+        cebra.setSalud(cebra.getSalud() + 10);
     }
     @Override
     public Organismo reproducir() {

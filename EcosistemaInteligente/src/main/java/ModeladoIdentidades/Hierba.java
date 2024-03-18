@@ -15,18 +15,24 @@ public String getTipo() {
 public void setTipo(String tipo) {
     this.tipo = tipo;
 }
-public void polinizar(Hierba otraHierba) {
-    if (this.estadoReproductivo && otraHierba.isEstadoReproductivo()) {
-        this.salud += 10;
-        otraHierba.setSalud(otraHierba.getSalud() + 10);
-    }
-}
+
 @Override
 public void interactuar(Organismo organismo) {
     if (organismo instanceof Hierba) {
-        polinizar((Hierba) organismo);
+        polenizar((Hierba) organismo);
+    } else if (organismo instanceof Cebra) {
+        serComida((Cebra) organismo);
     }
 }
+    public void polenizar(Hierba otraHierba) {
+        if (this.estadoReproductivo && otraHierba.isEstadoReproductivo()) {
+            this.salud += 10;
+            otraHierba.setSalud(otraHierba.getSalud() + 10);
+        }
+    }
+    public void serComida(Cebra cebra) {
+        this.salud -= 10;
+    }
 @Override
 public Organismo reproducir() {
     if (this.estadoReproductivo) {

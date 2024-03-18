@@ -15,17 +15,26 @@ public class Cebra extends Organismo{
     public void setTipo(String tipo) {
         this.tipo = tipo;
     }
-    public void comer(Organismo Hierba) {
-        if (this.salud > Hierba.getSalud()) {
-            this.salud += Hierba.getSalud();
-            Hierba.setSalud(0);
+    @Override
+    public void interactuar(Organismo organismo) {
+        if (organismo instanceof Leon) {
+            huir((Leon) organismo);
+        } else if (organismo instanceof Hierba) {
+            comer((Hierba) organismo);
         }
     }
-    public void competirPorRecursos(Organismo rival, Ambiente ambiente) {
-        if (this.salud > rival.getSalud() && ambiente.getRecursosDisponibles() > 0) {
-            this.salud += 10;
-            ambiente.setRecursosDisponibles(ambiente.getRecursosDisponibles() - 10);
+
+    public void huir(Leon leon) {
+        if (this.salud > leon.getSalud()) {
+            this.salud -= 10;
+        } else {
+            this.salud = 0;
         }
+    }
+
+    public void comer(Hierba hierba) {
+        this.salud += hierba.getSalud();
+        hierba.setSalud(0);
     }
 
     @Override
