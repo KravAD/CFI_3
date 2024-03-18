@@ -1,9 +1,7 @@
 package org.example;
 
 import ModeladoIdentidades.Ambiente;
-import ModeladoIdentidades.Animal;
 import ModeladoIdentidades.Organismo;
-import ModeladoIdentidades.Planta;
 import DinamicasPoblacionales.ResultadoSimulacion;
 
 public class Main {
