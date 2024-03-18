@@ -1,14 +1,19 @@
 package ModeladoIdentidades;
 
+import java.util.Random;
+
 public class Ambiente {
     protected String clima;
     protected String terreno;
     protected int recursosDisponibles;
+    private Random random;
+
 
     public Ambiente(String clima, String terreno, int recursosDisponibles) {
         this.clima = clima;
         this.terreno = terreno;
         this.recursosDisponibles = recursosDisponibles;
+        this.random = new Random();
     }
 
     public String getClima() {
@@ -42,6 +47,31 @@ public class Ambiente {
                 organismos[j].interactuar(organismos[i]);
             }
         }
+    }
+    public void simularEventosAleatorios(Organismo[] organismos) {
+        for (Organismo organismo : organismos) {
+            int evento = random.nextInt(3);
+            switch (evento) {
+                case 0: // Desastre natural
+                    organismo.setSalud(organismo.getSalud() - 50);
+                    break;
+                case 1: // Enfermedad
+                    organismo.setSalud(organismo.getSalud() - 10);
+                    break;
+                case 2: // Cambio climático
+                    if (!clima.equals("Ideal")) {
+                        organismo.setSalud(organismo.getSalud() - 5);
+                    }
+                    break;
+            }
+        }
+    }
+    public void calcularEstadísticas(Organismo[] organismos) {
+        int saludTotal = 0;
+        for (Organismo organismo : organismos) {
+            saludTotal += organismo.getSalud();
+        }
+        System.out.println("Salud media del ecosistema: " + saludTotal / organismos.length);
     }
 
 }

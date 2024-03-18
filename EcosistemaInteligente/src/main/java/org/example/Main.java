@@ -4,6 +4,7 @@ import ModeladoIdentidades.Ambiente;
 import ModeladoIdentidades.Animal;
 import ModeladoIdentidades.Organismo;
 import ModeladoIdentidades.Planta;
+import DinamicasPoblacionales.ResultadoSimulacion;
 
 public class Main {
     public static void main(String[] args) {
@@ -13,6 +14,8 @@ public class Main {
         Ambiente sabana = new Ambiente("calido", "pasto", 100);
 
         Organismo[] organismos = {leon, baobab};
+
+
 
 
 
