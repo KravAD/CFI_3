@@ -15,4 +15,11 @@ public class Planta extends Organismo{
     public void setTipo(String tipo) {
         this.tipo = tipo;
     }
+    public void polinizar(Planta otraPlanta) {
+        if (this.estadoReproductivo && otraPlanta.isEstadoReproductivo()) {
+            this.salud += 10;
+            otraPlanta.setSalud(otraPlanta.getSalud() + 10);
+        }
+    }
+
 }

@@ -12,7 +12,11 @@ public class Main {
         Organismo baobab = new Planta(2, 2, 100, 15, true, "arbol");
         Ambiente sabana = new Ambiente("calido", "pasto", 100);
 
-        
+        Organismo[] organismos = {leon, baobab};
+
+
+
+
 
     }
 }
