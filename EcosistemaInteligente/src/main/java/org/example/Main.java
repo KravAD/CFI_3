@@ -28,9 +28,13 @@ public class Main {
 
         Ambiente ambiente = new Ambiente("Savannah", "Terrestrial", 100);
 
-
-
-
+        ModeloPersonalizado modeloPersonalizado = new ModeloPersonalizado() {
+            @Override
+            public void ejecutarModelo() {
+                // Definir el modelo personalizado aquí
+                System.out.println("Ejecutando modelo personalizado...");
+            }
+        };
 
     }
 }
