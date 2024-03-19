@@ -31,10 +31,12 @@ public class Main {
         ModeloPersonalizado modeloPersonalizado = new ModeloPersonalizado() {
             @Override
             public void ejecutarModelo() {
-                // Definir el modelo personalizado aquí
                 System.out.println("Ejecutando modelo personalizado...");
             }
         };
+
+        Simulado simulado = new Simulado();
+        simulado.ejecutarModeloPersonalizado(modeloPersonalizado);
 
     }
 }
