@@ -40,5 +40,8 @@ public class Main {
         InterfazUsuario interfazUsuario = new InterfazUsuario(organismos, ambiente);
         interfazUsuario.mostrarMenu();
 
+        Visualizador visualizador = new Visualizador(organismos);
+        visualizador.visualizarDatos();
+
     }
 }
