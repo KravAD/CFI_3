@@ -38,5 +38,8 @@ public class Main {
         Simulado simulado = new Simulado();
         simulado.ejecutarModeloPersonalizado(modeloPersonalizado);
 
+        InterfazUsuario interfazUsuario = new InterfazUsuario(organismos, ambiente);
+        interfazUsuario.mostrarMenu();
+
     }
 }
