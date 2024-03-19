@@ -26,6 +26,9 @@ public class Main {
         organismos.add(baobab);
         organismos.add(hierba);
 
+        Ambiente ambiente = new Ambiente("Savannah", "Terrestrial", 100);
+
+
 
 
 
