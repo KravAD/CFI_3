@@ -1,4 +1,7 @@
-package ModeladoIdentidades;
+package UsuariosSimulaciones;
+import ModeladoIdentidades.Ambiente;
+import ModeladoIdentidades.Organismo;
+
 import java.util.List;
 
 public class Simulador {
