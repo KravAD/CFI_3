@@ -1,12 +1,23 @@
 package UsuariosSimulaciones;
+
+import AnalisisAvanzado.Visualizador;
+import ModeladoIdentidades.Ambiente;
+import ModeladoIdentidades.Organismo;
+
+import java.util.List;
 import java.util.Scanner;
+
 public class InterfazUsuario {
     private Scanner scanner;
+    private Simulador simulador;
+    private Visualizador visualizador;
 
-
-    public InterfazUsuario() {
+    public InterfazUsuario(List<Organismo> organismos, Ambiente ambiente) {
         this.scanner = new Scanner(System.in);
+        this.simulador = new Simulador(organismos, ambiente);
+        this.visualizador = new Visualizador(organismos);
     }
+
     public void mostrarMenu(){
         System.out.println("Bienvenido al simulador de ecosistema. Por favor, elige una opción:");
         System.out.println("1. Iniciar nueva simulación");
@@ -35,12 +46,11 @@ public class InterfazUsuario {
 
     private void iniciarSimulacion() {
         System.out.println("Iniciando nueva simulación...");
+        simulador.simular();
     }
 
     private void verResultados() {
         System.out.println("Mostrando resultados de la simulación anterior...");
+        visualizador.visualizarDatos();
     }
 }
-
-
-
