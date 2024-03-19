@@ -7,5 +7,9 @@ public class InterfazUsuario {
     public InterfazUsuario() {
         this.scanner = new Scanner(System.in);
     }
+    public void mostrarMenu(){
+        
+    }
+
 
 }
